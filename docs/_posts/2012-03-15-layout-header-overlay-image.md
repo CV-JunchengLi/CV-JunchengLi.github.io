@@ -3,9 +3,7 @@ title: "Layout: Header Image Overlay"
 header:
   overlay_image: /assets/images/unsplash-image-1.jpg
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-  actions:
-    - label: "Learn more"
-      url: "https://unsplash.com"
+  cta_url: "https://unsplash.com"
 categories:
   - Layout
   - Uncategorized
@@ -34,9 +32,8 @@ header:
   overlay_image: /assets/images/unsplash-image-1.jpg
   overlay_filter: 0.5 # same as adding an opacity of 0.5 to a black background
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-  actions:
-    - label: "More Info"
-      url: "https://unsplash.com"
+  cta_label: "More Info"
+  cta_url: "https://unsplash.com"
 ```
 
 Or if you want to do more fancy things, go full rgba:
@@ -49,7 +46,6 @@ header:
   overlay_image: /assets/images/unsplash-image-1.jpg
   overlay_filter: rgba(255, 0, 0, 0.5)
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
-  actions:
-    - label: "More Info"
-      url: "https://unsplash.com"
+  cta_label: "More Info"
+  cta_url: "https://unsplash.com"
 ```

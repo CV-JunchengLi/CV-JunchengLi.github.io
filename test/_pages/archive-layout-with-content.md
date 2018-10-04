@@ -212,3 +212,8 @@ Still sticking with science and Albert Einstein's E = MC<sup>2</sup>, which shou
 ### Variable Tag
 
 This allows you to denote <var>variables</var>.
+
+{% include base_path %}
+{% for post in site.pages %}
+{% include archive-single.html %}
+{% endfor %}
