@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Juncheng Li's HomePage"
+title                    : "Juncheng Lee's HomePage"
 title_separator          : "-"
-name                     : "Juncheng Li"
-description              : "The personal website of Juncheng Li - 李俊诚"
+name                     : "Juncheng Lee"
+description              : "The personal website of Juncheng Lee - 李俊诚"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "CV-JunchengLi/CV-JunchengLi.github.io"
@@ -100,7 +100,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Juncheng Li"
+  name             : "Juncheng Lee"
   avatar           : "/assets/images/bio-photo.png"
   bio              : "East China Normal University"
   location         : "Shanghai, China"
