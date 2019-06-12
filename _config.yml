@@ -22,7 +22,7 @@ name                     : "Juncheng Lee"
 description              : "The personal website of Juncheng Lee - 李俊诚"
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "CV-JunchengLi/CV-JunchengLi.github.io"
+repository               : "https://github.com/MIVRC"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
@@ -101,7 +101,7 @@ analytics:
 # Site Author
 author:
   name             : "Juncheng Lee"
-  avatar           : "/assets/images/bio-photo.png"
+  avatar           : "/assets/images/LJC.png"
   bio              : "East China Normal University"
   location         : "Shanghai, China"
   email            : "cvjunchengli@gmail.com"
