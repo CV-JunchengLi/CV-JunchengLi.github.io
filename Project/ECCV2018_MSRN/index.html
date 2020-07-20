@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ECCV2018_MSRN</title>
+
+<style media="screen" type="text/css">
+body
+{
+  border: 0pt none;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0pt;
+  outline-color: invert;
+  outline-style: none;
+  outline-width: 0pt;
+  padding: 0pt;
+  vertical-align: baseline;
+}
+body {
+  position: relative;
+  margin: 3em auto 2em auto;
+  width: 1080px;
+  font-family: Times New Roman, Lato, Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  background: #fdfdfd;
+}
+</style>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1ec4ad5c61857459aa78d5ee7ddee28d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+
+<body>
+<h3 align="center"><i><font size="3" face="Palatino Linotype">In Proceedings of European Conference on Computer Vision (ECCV) 2018</font></i></h3>
+
+<table align="center">
+<td align="center">
+<h1>Don't Hit Me! Glass Detection in Real-world Scenes</h1>
+<h3>
+	<a href="https://junchenglee.com/" target="_blank"><font size="3"><b>Juncheng Li</b></font></a><sup><font size="2">1</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3"><b>Faming Fang</b></font></a><sup><font size="2">1</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3">Yang Wang</font><sup><font size="2">1</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3">Kangfu Mei</font><sup><font size="2">2</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3"><b>Guixu Zhang</b></font></a><sup><font size="2">2</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+</h3>
+
+<sup><font size="2">1</font></sup>
+<b><a><font size="3">East China Normal University</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
+<sup><font size="2">2</font></sup>
+<b><a><font size="3">Jiangxi Normal University</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+<br>
+<br>&nbsp;
+	<b><a><font size="3"> Contact us:&nbsp;&nbsp;&nbsp;<i>cvjunchengli@gmail.con</i></font></a></b>
+</td>
+</table>
+
+
+<br><br>
+<table align="center">
+<tr>
+	<td align="center"><embed src="MSRB.png" width="640" height="360"></td>
+</tr>
+</table>
+
+
+<br>
+<h2><p><font size="6"><b>Abstract</b></font></p></h2>
+<hr/>
+<p><font size="4" face="Palatino Linotype">Recent studies have shown that deep neural networks can significantly improve the quality of single-image super-resolution. Current researches tend to use deeper convolutional neural networks to enhance performance. However, blindly increasing the depth of the network cannot ameliorate the network effectively. Worse still, with the depth of the network increases, more problems occurred in the training process and more training tricks are needed. In this paper, we propose a novel multiscale residual network (MSRN) to fully exploit the image features, which outperform most of the state-of-the-art methods. Based on the residual block, we introduce convolution kernels of different sizes to adaptively detect the image features in different scales. Meanwhile, we let these features interact with each other to get the most efficacious image information, we call this structure Multi-scale Residual Block (MSRB). Furthermore, the outputs of each MSRB are used as the hierarchical features for global feature fusion. Finally, all these features are sent to the reconstruction module for recovering the high-quality image.
+</font></p>
+
+
+<br>
+<h2><p><font size="6"><b>MSRN</b></font></p></h2>
+<hr/>
+<table align="center">
+<tr>
+	<td align="center"><img border=0 height=270 width=960 src="MSRN.png"></td>
+</tr>
+</table>
+
+<br>
+<h2><p><font size="6"><b>Visual Results</b></font></p></h2>
+<hr/>
+<table align="center">
+<tr>
+	<td align="center"><img border=0 height=300 width=900 src="Results.png"></td>
+</tr>
+</table>
+
+<br>
+<h2><p><font size="6"><b>Visual Results</b></font></p></h2>
+<hr/>
+<table align="center">
+<tr>
+	<td align="center"><img border=0 height=300 width=900 src="Table.png"></td>
+</tr>
+</table>
+
+
+
+<br>
+<h2><p><font size="6"><b>Downloads</b></font></p></h2>
+<hr/>
+<div align="left">
+		<table>						
+		<tr align="left">
+		<td>
+			<font size="4">Paper</font>
+		</td>
+		<td>
+			<font size="4">: <a href="https://junchenglee.com/paper/ECCV_2018.pdf" target="_blank">[ ECCV2018_MSRN.pdf ]</a></font>
+		</td>
+
+		</tr>
+
+		<tr align="left">
+		<td>
+			<font size="4">Poster</font>
+		</td>
+		<td>
+			<font size="4">: <a href="https://junchenglee.com/poster/MSRN-poster.pdf" target="_blank">[ MSRN_Poster.pdf ]</a></font>
+		</td>
+
+		</tr>
+							
+		<tr align="left">
+		<td>
+			<font size="4">Experimental results</font>
+		</td>
+		<td>
+			<font size="4">: <a href="https://www.jianguoyun.com/p/DQW60AIQ19ySBxjD8ckB" target="_blank">[ ECCV2018_MSRN_SR_images.zip ]</a></font>
+		</td>
+
+		</tr>
+
+		<tr align="left">
+		<td>
+			<font size="4">Pre-trained model</font>
+		</td>
+		<td>
+			<font size="4">: <a href="https://www.jianguoyun.com/p/DQpSSlQQ19ySBxjH2IYB" target="_blank">[ ECCV2018_MSRN_premodel.zip ]</a></font>
+		</td>
+		</tr>
+					
+		<tr align="left">
+		<td>
+			<font size="4">Source Code.</font>
+		</td>
+		<td>
+			<font size="4">: [ Code ]</font>
+			<font size="4">: <a href="https://github.com/MIVRC/MSRN-PyTorch" target="_blank">[ Code ]</a> </font>
+		</td>
+		</tr>	
+			
+			
+		</table>
+</div>
+<br>
+<br>
+
+
+
+<h2><p><font size="6" color="black"><b>BibTex</b></font></p></h2>
+<hr/>
+<font size="3">
+@InProceedings{li2018multi,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;title = {Multi-scale residual network for image super-resolution},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;author = {Li, Juncheng and Fang, Faming and Mei, Kangfu and Zhang, Guixu},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;booktitle = {Proceedings of the European Conference on Computer Vision (ECCV)},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pages = {517--532},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;year = {2018}<br>
+}
+</font>
+
+
+</body>
+
+</html>
