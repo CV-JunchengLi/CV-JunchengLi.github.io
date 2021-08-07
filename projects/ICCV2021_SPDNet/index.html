@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ICCV_SPDNet</title>
+
+<style media="screen" type="text/css">
+body
+{
+  border: 0pt none;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0pt;
+  outline-color: invert;
+  outline-style: none;
+  outline-width: 0pt;
+  padding: 0pt;
+  vertical-align: baseline;
+}
+body {
+  position: relative;
+  margin: 3em auto 2em auto;
+  width: 1080px;
+  font-family: Times New Roman, Lato, Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  background: #fdfdfd;
+}
+</style>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1ec4ad5c61857459aa78d5ee7ddee28d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+
+<body>
+<h3 align="center"><i><font size="3" face="Palatino Linotype">IEEE International Conference on Computer Vision (ICCV) 2021</font></i></h3>
+
+<table align="center">
+<td align="center">
+<h1>Structure-Preserving Deraining with Residue Channel Prior Guidance</h1>
+<h3>
+	<a href="https://scholar.google.com.hk/citations?user=y5bqy0AAAAAJ&hl=zh-CN" target="_blank"><font size="3"><b>Qiaosi Yi</b></font></a><sup><font size="2">1</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="https://junchenglee.com/" target="_blank"><font size="3"><b>Juncheng Li</b></font></a><sup><font size="2">1,2</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3">Qinyan Dai</font><sup><font size="2">1</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3">Faming Fang</font><sup><font size="2">1</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3">Guixu Zhang</font><sup><font size="2">1</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+	<font size="3">Tieyong Zeng</font><sup><font size="2">2</font></sup>&nbsp;&nbsp;&nbsp;&nbsp;
+</h3>
+
+<sup><font size="2">1</font></sup>
+<b><a><font size="3">East China Normal University</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
+<sup><font size="2">2</font></sup>
+<b><a><font size="3">The Chinese University of Hong Kong</font></a></b>&nbsp;&nbsp;&nbsp;&nbsp;
+
+<br>
+<br>&nbsp;
+	<b><a><font size="3"> Contact us: qiaosiyijoyies@gmail.com, cvjunchengli@gmail.con</font></a></b>
+
+</td>
+</table>
+
+
+<br><br>
+<table align="center">
+<tr>
+	<td align="center"><embed src="head.png" width="600"></td>
+</tr>
+</table>
+
+
+<br>
+<h2><p><font size="6"><b>Abstract</b></font></p></h2>
+<hr/>
+<p><font size="4" face="Palatino Linotype">Single image deraining is important for many high-level computer vision tasks since the rain streaks can severely degrade the visibility of images, thereby affecting the recognition and analysis of the image. Recently, many CNN-based methods have been proposed for rain removal. Although these methods can remove part of the rain streaks, it is difficult for them to adapt to real-world scenarios and restore high-quality rain-free images with clear and accurate structures. To solve this problem, we propose a StructurePreserving Deraining Network (SPDNet) with RCP guidance. SPDNet directly generates high-quality rain-free images with clear and accurate structures under the guidance of RCP but does not rely on any rain-generating assumptions. Specifically, we found that the RCP of images contains more accurate structural information than rainy images. Therefore, we introduced it to our deraining network to protect structure information of the rain-free image. Meanwhile, a Wavelet-based Multi-Level Module (WMLM) is proposed as the backbone for learning the background information of rainy images and an Interactive Fusion Module (IFM) is designed to make full use of RCP information. In addition, an iterative guidance strategy is proposed to gradually improve the accuracy of RCP, refining the result in a progressive path. Extensive experimental results on both synthetic and real-world datasets demonstrate that the proposed model achieves new state-of-the-art results.
+</font></p>
+
+
+<br>
+<h2><p><font size="6"><b>Motivation</b></font></p></h2>
+<hr/>
+<table align="center">
+<tr>
+	<td align="center"><img border=0 width=600 src="RCP".png"></td>
+</tr>
+</table>
+<p><font size="4" face="Palatino Linotype">Recently, convolutional neural networks (CNN) have
+	achieved significant success in many computer vision tasks. However, (1). most methods predict rain streaks via the built CNN model and then subtract rain streaks from rainy images to get the final output; (2). these methods focus on learning the structure of
+	rain streaks, but they pay less attention to learning the structure of objects and ignore the importance of image prior; (3). residue channel prior (RCP) show clear structures even extracted from the rainy image.
+</font></p>
+
+
+
+<br>
+<h2><p><font size="6"><b>SPDNet</b></font></p></h2>
+<hr/>
+<table align="center">
+<tr>
+	<td align="center"><img border=0 width=900 src="SPDNet.png"></td>
+</tr>
+
+<h3><p><font size="6"><b>WMLM</b></font></p></h2>
+<hr/>
+<tr>
+	<td align="center"><img border=0 width=600 src="WMLM.png"></td>
+</tr>
+
+<h3><p><font size="6"><b>IFM</b></font></p></h2>
+<hr/>
+<tr>
+	<td align="center"><img border=0 width=600 src="IFM.png"></td>
+</tr>
+</table>
+
+<br>
+<h2><p><font size="6"><b>Visual Results</b></font></p></h2>
+<hr/>
+<table align="center">
+<tr>
+	<td align="center"><img border=0 width=900 src="Results1.png"></td>
+</tr>
+<tr>
+	<td align="center"><img border=0 width=900 src="Results2.png"></td>
+</tr>
+</table>
+
+
+
+<br>
+<h2><p><font size="6"><b>PSNR/SSIM Results</b></font></p></h2>
+<hr/>
+<table align="center">
+<tr>
+	<td align="center"><img border=0 width=900 src="TABLE1.png"></td>
+</tr>
+</table>
+
+<br>
+<h2><p><font size="6"><b>NIQE/PI Results</b></font></p></h2>
+<hr/>
+<table align="center">
+<tr>
+	<td align="center"><img border=0 width=900 src="TABLE2.png"></td>
+</tr>
+</table>
+
+
+
+<br>
+<h2><p><font size="6"><b>Application Results</b></font></p></h2>
+<hr/>
+<table align="center">
+<tr>
+	<td align="center"><img border=0 width=900 src="Application.png"></td>
+</tr>
+</table>
+
+
+<br>
+<h2><p><font size="6"><b>Downloads</b></font></p></h2>
+<hr/>
+<div align="left">
+		<table>						
+		<tr align="left">
+		<td>
+			<font size="4">Paper</font>
+		</td>
+		<td>
+			<font size="4">: <a href="https://junchenglee.com/paper/ICCV_2021.pdf" target="_blank">[ ICCV_SPDNet.pdf ]</a></font>
+		</td>
+		</tr>
+							
+		<tr align="left">
+		<td>
+			<font size="4">Experimental results</font>
+		</td>
+		<td>
+			<font size="4">: <a href="#" target="_blank">[ SPDNet_Results.zip ]</a></font>
+		</td>
+		</tr>
+
+		<tr align="left">
+		<td>
+			<font size="4">Pre-trained model</font>
+		</td>
+		<td>
+			<font size="4">: <a href="#" target="_blank">[ ICCV2021_SPDNet_premodel.zip ]</a></font>
+		</td>
+		</tr>
+
+					
+		<tr align="left">
+		<td>
+			<font size="4">Source Code.</font>
+		</td>
+		<td>
+			<font size="4">: <a href="https://github.com/Joyies/SPDNet" target="_blank">[ Code ]</a> </font>
+		</td>
+		</tr>	
+			
+			
+		</table>
+</div>
+<br>
+<br>
+
+
+
+<h2><p><font size="6" color="black"><b>BibTex</b></font></p></h2>
+<hr/>
+<font size="3">
+@InProceedings{fang2020multi,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;title = {Structure-Preserving Deraining with Residue Channel Prior Guidance},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;author = {Yi Qiaosi, Li Juncheng, Dai Qinyan, Fang Faming, Zhang Guixu, and Zeng Tieyong},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;booktitle = {IEEE International Conference on Computer Vision},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;year = {2021},<br>
+}
+</font>
+
+
+</body>
+
+</html>
