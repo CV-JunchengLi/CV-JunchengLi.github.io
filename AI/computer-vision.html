@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>计算机视觉 · 入门学习路线图</title>
+<meta name="description" content="面向研究生的计算机视觉学习路线：CNN、目标检测、语义分割、视觉 Transformer 与生成模型，精选资源与实战里程碑。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="计算机视觉 · 入门学习路线图" />
+    <meta property="og:description" content="面向研究生的计算机视觉学习路线：CNN、目标检测、语义分割、视觉 Transformer 与生成模型，精选资源与实战里程碑。" />
+    <meta property="og:image" content="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=minimalist%20elegant%20digital%20illustration%20of%20computer%20vision%2C%20an%20abstract%20human%20eye%20or%20camera%20lens%20composed%20of%20glowing%20pixels%20and%20neural%20network%20nodes%2C%20with%20bounding%20boxes%20and%20segmentation%20contours%20around%20objects%2C%20deep%20teal%20and%20warm%20red%20accent%20colors%20on%20very%20light%20gray%20background%2C%20clean%20modern%20technology%20aesthetic%2C%20soft%20gradient%20lighting%2C%20balanced%20centered%20composition%2C%20high%20quality%2C%20no%20text%20no%20letters&image_size=square_hd" />
+<script>try{var __t=localStorage.getItem("hb-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=__t;}catch(e){}</script>
+<link rel="stylesheet" href="assets/css/handbook.css" />
+</head>
+<body>
+
+<!-- ============ 顶部导航 ============ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="返回 AI 学习手册首页">
+      <span class="seal-mini">AI</span>
+      <span>计算机视觉</span>
+    </a>
+    <nav class="nav" aria-label="页面导航">
+      <a href="index.html">首页</a>
+      <a href="#overview">路线总览</a>
+      <a href="#p0">六阶课程</a>
+      <a href="#milestones">实战里程碑</a>
+      <a href="#setup">环境配置</a>
+      <a href="#faq">常见疑问</a>
+    </nav>
+    <div class="progress-chip" title="勾选资源卡片即可记录学习进度，进度保存在本浏览器中">
+      <span class="ring" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 26 26">
+          <circle cx="13" cy="13" r="10.5" fill="none" stroke="#ded4bb" stroke-width="3"/>
+          <circle id="ringFill" cx="13" cy="13" r="10.5" fill="none" stroke="#1c4d47" stroke-width="3"
+                  stroke-linecap="round" stroke-dasharray="66" stroke-dashoffset="66"/>
+        </svg>
+        <b id="ringPct">0%</b>
+      </span>
+      <span id="progressText">已学 0 / 0</span>
+      <button class="reset-btn" id="resetBtn" type="button">重置</button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ 首屏 ============ -->
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div>
+      <h1 class="serif">计算机视觉入门</h1>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#overview">查看六阶段路线
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#milestones">看实战项目</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>6</b><span>个学习阶段</span></div>
+        <div><b>≈27</b><span>周推进周期</span></div>
+        <div><b>30</b><span>项核心资源</span></div>
+        <div><b>8</b><span>个实战里程碑</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=minimalist%20elegant%20digital%20illustration%20of%20computer%20vision%2C%20an%20abstract%20human%20eye%20or%20camera%20lens%20composed%20of%20glowing%20pixels%20and%20neural%20network%20nodes%2C%20with%20bounding%20boxes%20and%20segmentation%20contours%20around%20objects%2C%20deep%20teal%20and%20warm%20red%20accent%20colors%20on%20very%20light%20gray%20background%2C%20clean%20modern%20technology%20aesthetic%2C%20soft%20gradient%20lighting%2C%20balanced%20centered%20composition%2C%20high%20quality%2C%20no%20text%20no%20letters&image_size=square_hd" alt="计算机视觉插画：像素与神经网络构成的视觉感知" width="760" height="760" loading="eager"/>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 路线总览 ============ -->
+<section class="section" id="overview">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="sec-kicker">ROADMAP</p>
+      <h2 class="sec-title">六阶段路线总览</h2>
+      <div class="mode-switch reveal" role="group" aria-label="资源显示范围">
+        <button type="button" data-modebtn="core" class="active">核心路线 · 30 项</button>
+        <button type="button" data-modebtn="all">含拓展资源 · 66 项</button>
+      </div>
+    </div>
+
+    <div class="overview-grid" id="overviewGrid"><!-- JS 渲染 --></div>
+
+    <div class="timeline-strip reveal" aria-label="阶段时间轴">
+      <div class="ts-item"><div class="ts-node">零</div><b>基础回顾</b><span>第 1–2 周</span></div>
+      <div class="ts-item"><div class="ts-node">壹</div><b>CNN 分类</b><span>第 3–7 周</span></div>
+      <div class="ts-item"><div class="ts-node">贰</div><b>目标检测</b><span>第 8–13 周</span></div>
+      <div class="ts-item"><div class="ts-node">叁</div><b>语义分割</b><span>第 14–18 周</span></div>
+      <div class="ts-item"><div class="ts-node">肆</div><b>ViT 与生成</b><span>第 19–24 周</span></div>
+      <div class="ts-item"><div class="ts-node">伍</div><b>部署与研究</b><span>第 25 周起</span></div>
+    </div>
+
+    <div class="rhythm reveal">
+      <div>
+        <h3 class="serif">建议节奏：每周 12–15 小时</h3>
+        <p>如果有课或轮转，宁可拉长周期，也不要只看视频不写代码。<b>先专心走完 30 项核心，拓展资源只在需要时查阅。</b></p>
+      </div>
+      <ul>
+        <li><b>代码必亲手敲。</b>看视频时暂停、自己先写、再对答案；每章作业独立完成，不复制粘贴。</li>
+        <li><b>每阶段必须有产出物。</b>一个仓库、一次竞赛提交、一份实验记录——看得见的成果才能推动持续进步。</li>
+        <li><b>报错是最好的老师。</b>复制完整报错信息搜索，读最后三行堆栈；先自查 20 分钟再提问。</li>
+        <div class="ratio">
+          <span>40% 写代码做项目</span><span>30% 看课 / 读书</span><span>20% 论文与笔记</span><span>10% 周复盘</span>
+        </div>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 六阶段（JS 渲染） ============ -->
+<main id="phases"><!-- phase sections 渲染于此 --></main>
+
+<!-- ============ 实战里程碑 ============ -->
+<section class="section" id="milestones">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="sec-kicker">HANDS-ON MILESTONES</p>
+      <h2 class="sec-title">八个实战里程碑</h2>
+    </div>
+    <div class="milestone-list" id="milestoneList"><!-- JS 渲染 --></div>
+  </div>
+</section>
+
+<!-- ============ 环境配置 ============ -->
+<section class="section" id="setup">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="sec-kicker">ENVIRONMENT</p>
+      <h2 class="sec-title">第一天上手：环境配置</h2>
+      <p class="sec-desc">
+        CV 开发以 <strong>PyTorch + torchvision + OpenCV</strong> 为核心栈。分类/检测/分割都需要 GPU；
+        学习阶段用 Colab 或本地显卡起步，训练大模型或 ViT 时再用实验室服务器。
+      </p>
+    </div>
+
+    <div class="setup-grid">
+      <div class="step reveal">
+        <h3><span class="n">1</span>安装 Miniconda</h3>
+        <p>从 <a href="https://docs.conda.io/projects/miniconda/" target="_blank" rel="noopener noreferrer">conda.io/miniconda</a> 下载安装包。conda 为每个项目建立独立 Python 环境，避免包版本互相污染。</p>
+        <div class="codeblock">
+          <button class="copy-btn" type="button">复制</button>
+<pre><code><span class="c"># 创建并激活名为 llm 的环境</span>
+conda create -n llm python=3.11 -y
+conda activate llm</code></pre>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <h3><span class="n">2</span>安装 PyTorch</h3>
+        <p>先运行 <code>nvidia-smi</code> 查看显卡与 CUDA 驱动版本，再到 <a href="https://pytorch.org/get-started/locally/" target="_blank" rel="noopener noreferrer">pytorch.org</a> 选择器复制命令。无显卡用 CPU 版。</p>
+        <div class="codeblock">
+          <button class="copy-btn" type="button">复制</button>
+<pre><code><span class="c"># CPU 版（学习 Prompt/RAG/Agent 足够）</span>
+pip install torch
+
+<span class="c"># GPU 版请以官网选择器为准，形如：</span>
+pip install torch --index-url https://download.pytorch.org/whl/cu121</code></pre>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <h3><span class="n">3</span>安装 CV 工具链</h3>
+        <p>一条命令装好图像处理、增强、预训练模型与可视化核心库。</p>
+        <div class="codeblock">
+          <button class="copy-btn" type="button">复制</button>
+<pre><code>pip install torch torchvision \
+  opencv-python albumentations \
+  timm scikit-learn pandas matplotlib jupyter</code></pre>
+        </div>
+      </div>
+
+      <div class="step reveal">
+        <h3><span class="n">4</span>验证安装</h3>
+        <p>运行下面命令，看到版本号即成功。然后安装 <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">VS Code</a> 及 Python、Jupyter、Remote-SSH 插件。</p>
+        <div class="codeblock">
+          <button class="copy-btn" type="button">复制</button>
+<pre><code>python -c "import torch, cv2, timm; \
+print(torch.__version__, cv2.__version__, \
+torch.cuda.is_available())"
+<span class="c"># 期望输出形如: 2.x.x  4.x.x  True</span></code></pre>
+        </div>
+      </div>
+
+      <div class="setup-note reveal">
+        <b>暂时没有 GPU？</b>
+        分类基础阶段（前 7 周）在笔记本 CPU 或免费云端即可完成：
+        <a href="https://colab.research.google.com/" target="_blank" rel="noopener noreferrer">Google Colab</a> 与
+        <a href="https://www.kaggle.com/code" target="_blank" rel="noopener noreferrer">Kaggle Notebooks</a> 都提供免费 GPU（每周有额度），
+        进入检测/分割与 ViT 阶段再申请实验室服务器资源即可。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="sec-kicker">FAQ</p>
+      <h2 class="sec-title">新生最常问的九个问题</h2>
+    </div>
+    <div class="faq-list" id="faqList"><!-- JS 渲染 --></div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-quote">
+      「上士闻道，勤而行之。」<br/>
+      不必等一切都学懂才开始科研——带着具体问题去学，是成长最快的路。
+    </p>
+    <div class="footer-meta">
+      <p>本路线图整理于 2026 年 9 月，全部链接已于整理时逐一验证可访问，均指向外部公开资源，供实验室同学学习使用；如链接失效请以资源官网为准。</p>
+      <p>学习进度仅保存在当前浏览器（localStorage），不会上传到任何服务器。</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/data-computer-vision.js"></script>
+<script src="assets/js/handbook.js"></script>
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI 学习手册 · 合集</title>
+<meta name="description" content="面向研究生的 AI 学习手册合集：深度学习、大模型与智能体等方向的入门路线图，精选资源与实战里程碑。" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="AI 学习手册 · 合集" />
+<meta property="og:description" content="面向研究生的 AI 学习手册合集：深度学习、计算机视觉、强化学习、大模型与智能体四本入门路线图。" />
+<meta property="og:image" content="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=minimalist%20elegant%20digital%20illustration%20of%20artificial%20intelligence%20learning%20pathways%2C%20multiple%20glowing%20knowledge%20nodes%20interconnected%20by%20flowing%20gradient%20lines%20forming%20a%20network%2C%20central%20bright%20core%20representing%20AI%20with%20branches%20to%20deep%20learning%20and%20large%20language%20models%2C%20deep%20teal%20and%20warm%20red%20accent%20colors%20on%20very%20light%20gray%20background%2C%20clean%20modern%20technology%20aesthetic%2C%20soft%20gradient%20lighting%2C%20balanced%20centered%20composition%2C%20high%20quality%2C%20no%20text%20no%20letters&image_size=square_hd" />
+<script>try{var __t=localStorage.getItem("hb-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=__t;}catch(e){}</script>
+<style>
+/* ============ 设计令牌：宣纸 · 墨黛 · 朱砂 ============ */
+:root{
+  --paper:#f0f1f3;
+  --paper-2:#e3e5e9;
+  --surface:#ffffff;
+  --ink:#20291f;
+  --ink-2:#4d574b;
+  --ink-3:#7a8072;
+  --pine:#1c4d47;
+  --pine-2:#2f6f67;
+  --pine-soft:#e3ede8;
+  --cinnabar:#b13a2c;
+  --cinnabar-soft:#f6e3dd;
+  --gold:#a7803a;
+  --line:#d9dce0;
+  --line-strong:#c3c8cd;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(45,38,20,.06),0 6px 18px -10px rgba(45,38,20,.18);
+  --shadow-lg:0 2px 4px rgba(45,38,20,.08),0 18px 44px -18px rgba(45,38,20,.28);
+  --serif:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px;overflow-x:hidden}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  overflow-x:hidden;
+  background:
+    radial-gradient(1100px 520px at 88% -8%, rgba(177,58,44,.07), transparent 60%),
+    radial-gradient(900px 480px at -10% 12%, rgba(28,77,71,.08), transparent 55%),
+    var(--paper);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:rgba(177,58,44,.18)}
+a{color:var(--pine);text-decoration:none}
+a:hover{color:var(--cinnabar)}
+img{display:block}
+.container{max-width:1140px;margin:0 auto;padding:0 28px}
+.serif{font-family:var(--serif)}
+
+/* ============ 顶部导航 ============ */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(240,241,243,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{display:flex;align-items:center;gap:22px;height:64px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:700;font-size:19px;color:var(--ink);white-space:nowrap}
+.brand .seal-mini{
+  width:32px;height:32px;border-radius:7px;background:var(--cinnabar);color:#fdf6ea;
+  display:grid;place-items:center;font-size:17px;transform:rotate(-3deg);
+  box-shadow:0 2px 6px rgba(177,58,44,.35);
+}
+.nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{
+  padding:7px 13px;border-radius:999px;font-size:14px;color:var(--ink-2);white-space:nowrap;
+  transition:background .2s,color .2s;
+}
+.nav a:hover{background:var(--paper-2);color:var(--ink)}
+.nav-theme-btn{
+  background:none;border:1px solid var(--line-strong);border-radius:999px;
+  padding:5px 12px;cursor:pointer;font-size:13px;color:var(--ink-2);white-space:nowrap;
+}
+.nav-theme-btn:hover{border-color:var(--pine);color:var(--pine)}
+
+/* ============ 首屏 ============ */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-inner{display:grid;grid-template-columns:1.35fr .9fr;gap:40px;align-items:center;padding:84px 0 92px}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:13px;letter-spacing:.28em;color:var(--cinnabar);font-weight:600;
+  margin-bottom:22px;
+}
+.hero-kicker::before{content:"";width:34px;height:1px;background:var(--cinnabar)}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(2.5rem,5.6vw,4.1rem);
+  line-height:1.18;font-weight:900;letter-spacing:.02em;
+}
+.hero h1 .accent{color:var(--cinnabar);position:relative;white-space:nowrap}
+.hero h1 .accent::after{
+  content:"";position:absolute;left:0;right:0;bottom:.08em;height:.34em;
+  background:rgba(167,128,58,.28);z-index:-1;
+}
+.hero-sub{margin-top:22px;font-size:17px;color:var(--ink-2);max-width:34em}
+.hero-sub strong{color:var(--pine);font-weight:600}
+.hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:10px;font-size:15px;font-weight:600;
+  border:1px solid transparent;cursor:pointer;font-family:var(--sans);
+  transition:transform .15s,box-shadow .2s,background .2s;
+}
+.btn-primary{background:var(--cinnabar);color:#fdf6ea;box-shadow:0 8px 20px -8px rgba(177,58,44,.55)}
+.btn-primary:hover{color:#fff;background:#9e3327;transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line-strong);color:var(--pine);background:transparent}
+.btn-ghost:hover{background:var(--surface);color:var(--cinnabar)}
+.hero-meta{margin-top:40px;display:flex;gap:34px;flex-wrap:wrap}
+.hero-meta div b{font-family:var(--serif);font-size:28px;color:var(--pine);display:block;line-height:1.2}
+.hero-meta div span{font-size:13px;color:var(--ink-3)}
+.hero-art{position:relative;display:grid;place-items:center;min-height:320px}
+.hero-art img{
+  width:min(100%,400px);height:auto;border-radius:24px;
+  box-shadow:0 24px 48px -20px rgba(28,77,71,.35),0 4px 12px rgba(32,41,31,.08);
+  border:1px solid var(--line);
+}
+
+/* ============ 通用区块 ============ */
+.section{padding:78px 0}
+.section + .section{border-top:1px dashed var(--line-strong)}
+.sec-head{margin-bottom:42px;max-width:720px}
+.sec-kicker{font-size:12.5px;letter-spacing:.3em;color:var(--cinnabar);font-weight:600;margin-bottom:12px}
+.sec-title{font-family:var(--serif);font-size:clamp(1.7rem,3.2vw,2.35rem);font-weight:800;line-height:1.3}
+.sec-desc{margin-top:14px;color:var(--ink-2);font-size:15.5px}
+
+/* ============ 手册卡片网格 ============ */
+.handbooks{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.handbook-card{
+  position:relative;display:flex;flex-direction:column;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 28px;color:var(--ink);
+  transition:transform .18s,box-shadow .25s,border-color .2s;
+  box-shadow:var(--shadow);
+}
+.handbook-card.available:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--line-strong)}
+.handbook-card.soon{opacity:.78}
+.handbook-card .hc-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
+.handbook-card .seal{
+  width:46px;height:46px;border-radius:10px;background:var(--cinnabar);color:#fdf6ea;
+  display:grid;place-items:center;font-family:var(--serif);font-size:22px;font-weight:700;
+  transform:rotate(-3deg);box-shadow:0 3px 8px rgba(177,58,44,.35);flex-shrink:0;
+}
+.handbook-card.soon .seal{background:var(--ink-3);box-shadow:none}
+.handbook-card h3{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.3}
+.handbook-card .hc-sub{font-size:12.5px;color:var(--ink-3);letter-spacing:.05em;margin-top:3px}
+.handbook-card p{font-size:14.5px;color:var(--ink-2);margin-top:4px;flex:1}
+.handbook-card .hc-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.handbook-card .hc-tag{
+  font-size:12px;padding:4px 11px;border-radius:999px;
+  background:var(--pine-soft);color:var(--pine);font-weight:500;
+}
+.handbook-card .hc-tag.alt{background:var(--cinnabar-soft);color:var(--cinnabar)}
+.handbook-card .hc-foot{display:flex;justify-content:space-between;align-items:center;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}
+.handbook-card .hc-link{
+  display:inline-flex;align-items:center;gap:6px;font-weight:600;font-size:14px;color:var(--pine);
+}
+.handbook-card .hc-link:hover{color:var(--cinnabar)}
+.handbook-card .hc-badge{
+  font-size:12px;color:var(--ink-3);font-weight:600;
+  padding:3px 10px;border-radius:999px;background:var(--paper-2);
+}
+
+/* ============ 页脚 ============ */
+.site-footer{border-top:1px solid var(--line);background:var(--paper-2);padding:52px 0 40px;margin-top:20px}
+.footer-meta{margin-top:18px;color:var(--ink-3);font-size:13px;display:grid;gap:6px}
+
+/* ============ 响应式 ============ */
+@media (max-width:960px){
+  .hero-inner{grid-template-columns:1fr;padding:60px 0 64px}
+  .hero-art{display:none}
+}
+@media (max-width:680px){
+  .container{padding:0 18px}
+  .header-inner{gap:12px;height:auto;padding:10px 0;flex-wrap:wrap}
+  .nav{order:3;width:100%;margin:0 -18px;padding:0 18px 2px}
+  .section{padding:56px 0}
+  .handbooks{grid-template-columns:1fr}
+  .hero-meta{gap:22px}
+}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ 深色模式 ============ */
+html[data-theme="dark"]{
+  --paper:#15191c;
+  --paper-2:#1b2125;
+  --surface:#20272c;
+  --ink:#e4e2dc;
+  --ink-2:#b6bab2;
+  --ink-3:#868b83;
+  --pine:#8fc2b8;
+  --pine-2:#a9d2ca;
+  --pine-soft:#22332f;
+  --cinnabar:#e08570;
+  --cinnabar-soft:#3a2723;
+  --gold:#c9a35c;
+  --line:#333a3f;
+  --line-strong:#454d52;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 18px -10px rgba(0,0,0,.5);
+  color-scheme:dark;
+}
+
+/* ============ 搜索 ============ */
+.search-bar{position:relative;margin:18px 0 0;max-width:540px}
+.search-bar input{
+  width:100%;padding:11px 44px 11px 18px;border-radius:10px;
+  border:1.5px solid var(--line-strong);background:var(--surface);
+  font-size:15px;color:var(--ink);font-family:var(--sans);outline:none;
+  transition:border-color .2s,box-shadow .2s;
+}
+.search-bar input:focus{border-color:var(--pine);box-shadow:0 0 0 3px rgba(28,77,71,.12)}
+.search-bar button{
+  position:absolute;right:4px;top:4px;height:34px;width:34px;border:none;
+  background:transparent;color:var(--ink-3);cursor:pointer;border-radius:8px;
+  display:grid;place-items:center;font-size:16px;
+}
+.search-bar button:hover{color:var(--pine)}
+html[data-theme="dark"] .search-bar input{background:var(--paper-2)}
+.search-results{margin-top:18px;display:grid;gap:10px}
+.sr-item{display:block;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface);transition:border-color .15s}
+.sr-item:hover{border-color:var(--pine);transform:translateY(-1px)}
+.sr-item h4{font-size:15px;margin-bottom:4px;color:var(--ink)}
+.sr-item .src{font-size:12.5px;color:var(--ink-3)}
+.sr-item .src span{background:var(--paper-2);padding:1px 7px;border-radius:6px;margin-right:6px}
+.sr-meta{font-size:12.5px;color:var(--ink-3);margin-top:6px}
+</style>
+</head>
+<body>
+
+<!-- ============ 顶部导航 ============ -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="AI 学习手册首页">
+      <span class="seal-mini">AI</span>
+      <span>AI 学习手册</span>
+    </a>
+    <nav class="nav" aria-label="页面导航">
+      <a href="#search">资源检索</a>
+      <a href="#handbooks">手册列表</a>
+      <a href="#about">关于</a>
+      <button type="button" class="nav-theme-btn" id="themeBtn" aria-label="切换深色模式">☾</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ 首屏 ============ -->
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div>
+      <p class="hero-kicker">研究生 AI 学习 · 合集</p>
+      <h1 class="serif">从入门到科研的<br/><span class="accent">AI 学习手册</span></h1>
+      <p class="hero-sub">
+        一套为<strong>研究生</strong>设计的精简学习路线：按方向拆分手册，每本只保留最经典的核心资源与实战里程碑，
+        配套勾选进度自动保存。<strong>选一本手册，跟着走就行。</strong>
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#handbooks">浏览手册
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="hero-meta">
+        <div><b id="hbCount">2</b><span>本已上线手册</span></div>
+        <div><b>6</b><span>阶段 / 每本</span></div>
+        <div><b>≈27</b><span>周 / 每本</span></div>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=minimalist%20elegant%20digital%20illustration%20of%20artificial%20intelligence%20learning%20pathways%2C%20multiple%20glowing%20knowledge%20nodes%20interconnected%20by%20flowing%20gradient%20lines%20forming%20a%20network%2C%20central%20bright%20core%20representing%20AI%20with%20branches%20to%20deep%20learning%20and%20large%20language%20models%2C%20deep%20teal%20and%20warm%20red%20accent%20colors%20on%20very%20light%20gray%20background%2C%20clean%20modern%20technology%20aesthetic%2C%20soft%20gradient%20lighting%2C%20balanced%20centered%20composition%2C%20high%20quality%2C%20no%20text%20no%20letters&image_size=square_hd" alt="AI 学习手册合集插画" width="760" height="760" loading="eager"/>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 资源检索 ============ -->
+<section class="section" id="search">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="sec-kicker">SEARCH</p>
+      <h2 class="sec-title">全站资源检索</h2>
+      <p class="sec-desc">
+        跨四本手册检索全部学习资源，按标题、来源与描述匹配。适合查找某个具体主题（如「PPO」「LoRA」「nnU-Net」）在路线中的位置。
+      </p>
+      <div class="search-bar">
+        <input id="searchInput" type="search" placeholder="输入关键词检索，如：PPO、LoRA、SAM、nnU-Net…" aria-label="全站资源检索" autocomplete="off" />
+        <button type="button" id="searchClear" aria-label="清空检索词" title="清空">×</button>
+      </div>
+    </div>
+    <div id="searchResults" class="search-results" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ============ 手册列表 ============ -->
+<section class="section" id="handbooks">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="sec-kicker">HANDBOOKS</p>
+      <h2 class="sec-title">选择学习方向</h2>
+      <p class="sec-desc">
+        每本手册都是一条完整的学习路线：六阶段、核心资源、实战里程碑。点击进入后，进度会自动保存在当前浏览器中。
+      </p>
+    </div>
+
+    <div class="handbooks">
+      <a class="handbook-card available reveal" href="deep-learning.html">
+        <div class="hc-top">
+          <span class="seal">壹</span>
+          <div>
+            <h3>深度学习入门</h3>
+            <div class="hc-sub">DEEP LEARNING FOUNDATIONS</div>
+          </div>
+        </div>
+        <p>从零开始：Python 与数学基础 → 机器学习 → PyTorch 深度学习 → 计算机视觉 → 医学影像 → 科研入门。适合完全零基础的新同学。</p>
+        <div class="hc-tags">
+          <span class="hc-tag">6 个阶段</span>
+          <span class="hc-tag">≈27 周</span>
+          <span class="hc-tag alt">28 项核心</span>
+          <span class="hc-tag alt">8 个里程碑</span>
+        </div>
+        <div class="hc-foot">
+          <span class="hc-link">进入学习
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="handbook-card available reveal" href="computer-vision.html">
+        <div class="hc-top">
+          <span class="seal">贰</span>
+          <div>
+            <h3>计算机视觉入门</h3>
+            <div class="hc-sub">COMPUTER VISION</div>
+          </div>
+        </div>
+        <p>假设已有深度学习基础：CNN 与图像分类 → 目标检测 → 语义分割 → 视觉 Transformer 与生成模型 → 部署与研究。准备从事 CV 方向。</p>
+        <div class="hc-tags">
+          <span class="hc-tag">6 个阶段</span>
+          <span class="hc-tag">≈27 周</span>
+          <span class="hc-tag alt">30 项核心</span>
+          <span class="hc-tag alt">8 个里程碑</span>
+        </div>
+        <div class="hc-foot">
+          <span class="hc-link">进入学习
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="handbook-card available reveal" href="reinforcement-learning.html">
+        <div class="hc-top">
+          <span class="seal">叁</span>
+          <div>
+            <h3>强化学习入门</h3>
+            <div class="hc-sub">REINFORCEMENT LEARNING</div>
+          </div>
+        </div>
+        <p>假设已有深度学习基础：MDP 与 Bellman 方程 → Q-learning 与 DQN → 策略梯度与 PPO → SAC/TD3/离线 RL → 多智能体与 RLHF。准备从事 RL 方向。</p>
+        <div class="hc-tags">
+          <span class="hc-tag">6 个阶段</span>
+          <span class="hc-tag">≈27 周</span>
+          <span class="hc-tag alt">30 项核心</span>
+          <span class="hc-tag alt">8 个里程碑</span>
+        </div>
+        <div class="hc-foot">
+          <span class="hc-link">进入学习
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <a class="handbook-card available reveal" href="llm-agent.html">
+        <div class="hc-top">
+          <span class="seal">肆</span>
+          <div>
+            <h3>大模型与智能体入门</h3>
+            <div class="hc-sub">LLM &amp; AI AGENTS</div>
+          </div>
+        </div>
+        <p>假设已有深度学习基础：Transformer → LLM 训练与微调 → Prompt 与 RAG → 智能体 Agent → 推理部署与研究。准备从事大模型相关方向。</p>
+        <div class="hc-tags">
+          <span class="hc-tag">6 个阶段</span>
+          <span class="hc-tag">≈27 周</span>
+          <span class="hc-tag alt">30 项核心</span>
+          <span class="hc-tag alt">8 个里程碑</span>
+        </div>
+        <div class="hc-foot">
+          <span class="hc-link">进入学习
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 关于 ============ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="sec-kicker">ABOUT</p>
+      <h2 class="sec-title">关于这套手册</h2>
+    </div>
+    <div class="handbooks" style="grid-template-columns:1fr 1fr">
+      <div class="handbook-card reveal">
+        <h3 style="font-size:18px">设计原则</h3>
+        <p style="margin-top:10px">每本手册只保留最经典的核心资源（约 28–30 项），其余作为拓展按需选学。每个阶段都有明确的「目标 → 产出物」，并设置不可跳过的实战里程碑。</p>
+      </div>
+      <div class="handbook-card reveal">
+        <h3 style="font-size:18px">使用方式</h3>
+        <p style="margin-top:10px">按阶段顺序学习，完成一个再进入下一个。勾选卡片记录进度，数据仅保存在当前浏览器（localStorage），不会上传。切换「核心 / 拓展」视图控制学习范围。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="brand" style="margin-bottom:10px">
+      <span class="seal-mini">AI</span>
+      <span>AI 学习手册</span>
+    </div>
+    <div class="footer-meta">
+      <p>本合集整理于 2026 年 9 月，所有链接均指向外部公开资源，供学习使用；如链接失效请以资源官网为准。</p>
+      <p>学习进度仅保存在当前浏览器（localStorage），不会上传到任何服务器。</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/data-deep-learning.js"></script>
+<script src="assets/js/data-computer-vision.js"></script>
+<script src="assets/js/data-reinforcement-learning.js"></script>
+<script src="assets/js/data-llm-agent.js"></script>
+<script>
+/* 入场动画 */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+/* 统计已上线手册数量 */
+const available = document.querySelectorAll(".handbook-card.available").length;
+const el = document.getElementById("hbCount");
+if(el) el.textContent = available;
+
+/* ============ 深色模式切换 ============ */
+(function(){
+  const btn = document.getElementById("themeBtn");
+  function sync(){
+    const dark = document.documentElement.dataset.theme === "dark";
+    btn.textContent = dark ? "☀" : "☾";
+    btn.setAttribute("aria-label", dark ? "切换为浅色模式" : "切换为深色模式");
+  }
+  btn.addEventListener("click", ()=>{
+    const cur = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    document.documentElement.dataset.theme = cur;
+    try{ localStorage.setItem("hb-theme", cur); }catch(e){}
+    sync();
+  });
+  sync();
+})();
+
+/* ============ 全站资源检索 ============ */
+const HB_META = [
+  {key:"deep-learning",        name:"深度学习",     file:"deep-learning.html"},
+  {key:"computer-vision",      name:"计算机视觉",   file:"computer-vision.html"},
+  {key:"reinforcement-learning",name:"强化学习",    file:"reinforcement-learning.html"},
+  {key:"llm-agent",            name:"大模型与智能体",file:"llm-agent.html"},
+];
+const SEARCH_INDEX = [];
+HB_META.forEach(hb=>{
+  const data = (window.HANDBOOKS || {})[hb.key];
+  if(!data) return;
+  data.PHASES.forEach(ph=>{
+    ph.resources.forEach(r=>{
+      SEARCH_INDEX.push({hb:hb.name, file:hb.file, phaseId:ph.id, phaseTitle:ph.title,
+                         t:r.t, s:r.s, d:r.d, type:r.type, p:r.p});
+    });
+  });
+});
+const PRIO_TXT = {1:"核心", 2:"推荐", 3:"选学"};
+const searchInput = document.getElementById("searchInput");
+const searchResults = document.getElementById("searchResults");
+function renderSearch(q){
+  q = q.trim().toLowerCase();
+  if(!q){ searchResults.innerHTML = ""; return; }
+  const hits = SEARCH_INDEX.filter(r=>(r.t+" "+r.s+" "+r.d).toLowerCase().includes(q));
+  if(!hits.length){
+    searchResults.innerHTML = `<p class="sr-meta">未找到与「${q.replace(/</g,"&lt;")}」相关的资源，可尝试更换关键词（如英文缩写或算法名）。</p>`;
+    return;
+  }
+  searchResults.innerHTML =
+    `<p class="sr-meta">共 ${hits.length} 条结果（覆盖 ${SEARCH_INDEX.length} 项资源）</p>` +
+    hits.map(r=>`
+    <a class="sr-item" href="${r.file}#${r.phaseId}">
+      <h4>${r.t}</h4>
+      <div class="src"><span>${r.hb}</span><span>${r.phaseTitle}</span>${r.s}</div>
+      <div class="sr-meta">${r.type} · ${PRIO_TXT[r.p]} — ${r.d}</div>
+    </a>`).join("");
+}
+searchInput.addEventListener("input", e=>renderSearch(e.target.value));
+document.getElementById("searchClear").addEventListener("click", ()=>{
+  searchInput.value = ""; renderSearch(""); searchInput.focus();
+});
+</script>
+</body>
+</html>
