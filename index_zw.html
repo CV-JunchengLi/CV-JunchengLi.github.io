@@ -4,6 +4,7 @@
 <head>
 <link rel="shortcut icon" href="myIcon.ico">
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <meta name="keywords" content="Juncheng Li, Li Juncheng, Juncheng, East China Normal University, The Chinese University of Hong Kong, Shanghai University, 李俊诚, 俊诚, 华东师范大学, 香港中文大学, 上海大学"> 
 <meta name="description" content="李俊诚的主页">
@@ -24,11 +25,18 @@
 
 <style>
 	.scroll-container {
-	  width: 940px; 
+	  width: 100%; 
+	  max-width: 940px;
+	  box-sizing: border-box;
 	  height: 170px; 
 	  overflow: auto; 
-	  border: 1px solid #ccc; 
-	  padding: 10px; 
+	  border: 1px solid #ddd; 
+	  border-radius: 6px;
+	  padding: 10px 14px; 
+	  background: #fcfcfc;
+	}
+	@media (max-width: 760px) {
+	  .scroll-container { height: 220px; }
 	}
 </style>
 
@@ -87,18 +95,13 @@
 </table>
 
 
-<table id="tbPublications" width="100%">
-	<tbody> 
-		<tr>	
-			<td width="206">
-			<img src="./pic/Wechat.jpg" width="200" height = "200" style="box-shadow: 4px 4px 8px #888">
-			</td>		
-			<td>智能影像计算小组</td><br>
-			<td>团队公众号，欢迎关注！</td><br>
-			</td>
-		</tr>
-	</tbody>
-</table>
+<div class="wechat-card">
+	<img src="./pic/Wechat.jpg" alt="智能影像计算小组公众号二维码">
+	<div class="wechat-card-text">
+		<div class="wechat-card-title">智能影像计算小组（IIC Group）</div>
+		<div class="wechat-card-desc">扫描二维码，关注团队公众号</div>
+	</div>
+</div>
 
 <h2>新闻</h2>
 <table style="border-spacing:2px">

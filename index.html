@@ -4,6 +4,7 @@
 <head>
 <link rel="shortcut icon" href="myIcon.ico">
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <meta name="keywords" content="Juncheng Li, Li Juncheng, Juncheng, East China Normal University, The Chinese University of Hong Kong, Shanghai University, 李俊诚, 俊诚, 华东师范大学, 香港中文大学，上海大学"> 
 <meta name="description" content="Juncheng Li's home page">
@@ -24,11 +25,18 @@
 
 <style>
 	.scroll-container {
-	  width: 940px; /* 容器宽度 */
+	  width: 100%; /* 容器宽度 */
+	  max-width: 940px;
+	  box-sizing: border-box;
 	  height: 170px; /* 容器高度 */
 	  overflow: auto; /* 当内容超出容器时显示滚动条 */
-	  border: 1px solid #ccc; /* 容器边框 */
-	  padding: 10px; /* 内边距 */
+	  border: 1px solid #ddd; /* 容器边框 */
+	  border-radius: 6px;
+	  padding: 10px 14px; /* 内边距 */
+	  background: #fcfcfc;
+	}
+	@media (max-width: 760px) {
+	  .scroll-container { height: 220px; }
 	}
 </style>
 
@@ -90,18 +98,13 @@
 </table>
 
 
-<table id="tbPublications" width="100%">
-	<tbody> 
-		<tr>	
-			<td width="206">
-			<img src="./pic/Wechat.jpg" width="200" height = "200" style="box-shadow: 4px 4px 8px #888">
-			</td>		
-			<td>Intelligent Imaging Computing Group (IIC Group)</td><br>
-			<td>Welcome to follow!</td><br>
-			</td>
-		</tr>
-	</tbody>
-</table>
+<div class="wechat-card">
+	<img src="./pic/Wechat.jpg" alt="IIC Group WeChat official account QR code">
+	<div class="wechat-card-text">
+		<div class="wechat-card-title">Intelligent Imaging Computing Group (IIC Group)</div>
+		<div class="wechat-card-desc">Scan the QR code to follow our official WeChat account</div>
+	</div>
+</div>
 
 
 <h2>News</h2>
